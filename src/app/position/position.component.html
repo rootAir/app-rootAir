@@ -1,15 +1,18 @@
 <div id="accordion">
     <dx-accordion
         #accordion
-        [dataSource]="companies"
+        [dataSource]="positions"
         [collapsible]="false"
         [multiple]="false"
         [animationDuration]="300"
-        [selectedItems]="[companies[0]]">
-        <div *dxTemplate="let company of 'title'">
-            <h1>{{company.CompanyName}}</h1>
+        [selectedItems]="[positions[0]]">
+        <div *dxTemplate="let position of 'title'">
+            <h1 class="accordion-position-active" [style.background-color] = position.colorActive> 
+                {{position.percentActive}}
+                {{position.nameActive}}
+            </h1>
         </div>
-        <div *dxTemplate="let company of 'item'">
+        <!-- <div *dxTemplate="let company of 'item'">
             <div>
                 <p>
                     <b>{{company.City}}</b>
@@ -34,6 +37,6 @@
                     </a>
                 </p>
             </div>
-        </div>
+        </div> -->
     </dx-accordion>
 </div>

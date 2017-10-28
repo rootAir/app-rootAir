@@ -1,8 +1,17 @@
-/deep/ #accordion h1 {
+/* /deep/ .accordion-position-color h1 {
+    
+}    
+/deep/ .accordion-position-percent h1 {
+
+} */
+/deep/ .accordion-position-active {
+/* /deep/ #accordion h1 { */
     font-size: 20px;
+    margin: 50px;
+    color: #000000;
 }
 /deep/ .options,
-/deep/ .selected-data {    
+/deep/ .selected-data {
     padding: 20px;
     background-color: #f5f5f5;
     margin-top: 20px;

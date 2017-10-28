@@ -4,7 +4,7 @@
 
 // import { DxAccordionModule, DxCheckBoxModule, DxSliderModule, DxTagBoxModule, DxTemplateModule } from 'devextreme-angular';
 
-import { Company, Service } from './position.service';
+import { Position, Service } from './position.service';
 
 // if(!/localhost/.test(document.location.host)) {
 //     enableProdMode();
@@ -17,13 +17,16 @@ import { Company, Service } from './position.service';
     providers: [Service]
 })
 export class PositionComponent implements OnInit { 
-    title = 'app';
-    companies: Company[];
+    title = 'Position';
+    positions: Position[];
+    nameActive: string;
+    percentActive: string;
+    colorActive: string;
 
     ngOnInit(): void {  
     }
 
     constructor(service: Service) {
-        this.companies = service.getCompanies();
+        this.positions = service.getPositions();
     }
 }
