@@ -1,14 +1,38 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>MyApp</title>
-  <base href="/">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<head>
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.1.7/css/dx.spa.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.1.7/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.1.7/css/dx.light.compact.css" />
+
+    <script src="https://unpkg.com/core-js@2.4.1/client/shim.min.js"></script>
+    <script src="https://unpkg.com/zone.js@0.6.25/dist/zone.js"></script>
+    <script src="https://unpkg.com/reflect-metadata@0.1.3/Reflect.js"></script>
+    <script src="https://unpkg.com/systemjs@0.19.31/dist/system.js"></script>
+
+    <!-- <script src="config.js"></script> -->
+    <!-- <script>
+        System.import('app')
+            .then(function(viz) {
+                System.import("devextreme/viz/themes").then(function(viz) {
+                    viz.currentTheme("generic.light");
+                    viz.refreshTheme();
+                });
+            })
+            .catch(console.error.bind(console));
+    </script> -->
+
 </head>
-<body>
-  <app-root></app-root>
+
+<body class="dx-viewport">
+    <div class="demo-container">
+        <app-root>Loading...</app-root>
+    </div>
 </body>
+
 </html>

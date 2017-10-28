@@ -1,11 +1,37 @@
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { PositionComponent } from './position/position.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: 'test', loadChildren: './position/position.module#PositionModule' },
+  {
+    path: 'test',
+    component: PositionComponent,
 
-//   { path: '', redirectTo: 'pages', pathMatch: 'full' },
-//   { path: '**', redirectTo: 'pages' },
+    // path: '',
+    // component: AppComponent,
+    // children: [{
+    //   path: 'test',
+    //   component: PositionComponent,
+    // }]
+
+    //   path: 'ui-features',
+    //   loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
+    // }, {
+    //   path: '',
+    //   redirectTo: 'dashboard',
+    //   pathMatch: 'full',
+  }
 ];
 
-
-export const appRouting = RouterModule.forRoot(routes, { useHash: true });
+const config: ExtraOptions = {
+  useHash: true,
+};
+  
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class appRouting {
+}

@@ -1,4 +1,4 @@
- import { Component } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 // import { BrowserModule } from '@angular/platform-browser';
 // import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -11,17 +11,19 @@ import { Company, Service } from './position.service';
 // }
 
 @Component({
-    selector: 'demo-app',
+    selector: 'app-position',
     templateUrl: './position.component.html',
     styleUrls: ['./position.component.css'],
-    // providers: [Service]
+    providers: [Service]
 })
-export class PositionComponent {
+export class PositionComponent implements OnInit { 
+    title = 'app';
     companies: Company[];
 
-    debugger;
+    ngOnInit(): void {  
+    }
+
     constructor(service: Service) {
-        debugger;
         this.companies = service.getCompanies();
     }
 }
