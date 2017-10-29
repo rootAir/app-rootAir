@@ -30,7 +30,7 @@ let positions: Position[] = [{
 }];
 
 @Injectable()
-export class Service {
+export class PositionService {
     getPositions(): Position[] {
         return positions;
     }

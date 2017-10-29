@@ -8,7 +8,8 @@ import { DxButtonModule,
   DxCheckBoxModule, 
   DxSliderModule, 
   DxTagBoxModule, 
-  DxTemplateModule 
+  DxTemplateModule, 
+  DxDataGridModule
   } from 'devextreme-angular';
 // import { PositionModule } from './position/position.module';
 
@@ -40,7 +41,9 @@ import { AppComponent } from './app.component';
 		DxCheckBoxModule,
 		DxSliderModule,
 		DxTagBoxModule,
-		DxTemplateModule,
+    DxTemplateModule,
+    DxDataGridModule,
+    DxTemplateModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },

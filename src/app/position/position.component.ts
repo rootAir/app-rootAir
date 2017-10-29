@@ -4,7 +4,8 @@
 
 // import { DxAccordionModule, DxCheckBoxModule, DxSliderModule, DxTagBoxModule, DxTemplateModule } from 'devextreme-angular';
 
-import { Position, Service } from './position.service';
+import { Position, PositionService } from './service/position.service';
+import { DetailsPositionService } from './service/details-position.service';
 
 // if(!/localhost/.test(document.location.host)) {
 //     enableProdMode();
@@ -13,9 +14,9 @@ import { Position, Service } from './position.service';
 @Component({
     selector: 'app-position',
     templateUrl: './position.component.html',
-    // styleUrls: ['./position.component.css', './position.component.less'],
+    // styleUrls: ['./position.component.css'],
     styleUrls: ['./position.component.less'],
-    providers: [Service]
+    providers: [PositionService, DetailsPositionService]
 })
 export class PositionComponent implements OnInit { 
     title = 'Position';
@@ -23,11 +24,27 @@ export class PositionComponent implements OnInit {
     nameActive: string;
     percentActive: string;
     colorActive: string;
+    detailsPosition: any;
 
     ngOnInit(): void {  
     }
 
-    constructor(service: Service) {
-        this.positions = service.getPositions();
+    constructor(
+        private positionService: PositionService,
+        private detailsPositionService: DetailsPositionService
+    ) {
+        this.positions = this.positionService.getPositions();
+        this.detailsPosition = {
+            store: {
+                type: 'array',
+                key: 'ID',
+                data: this.detailsPositionService.getEmployees()
+            }
+        }
     }
+
+    completedValue(rowData) {
+        return rowData.Status == "Completed";
+    }
+
 }
