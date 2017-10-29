@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "server/app.js",
   "scripts": {
     "start": "concurrently --kill-others \"npm run _server:run\" \"ng serve --aot --progress=false --proxy-config proxy.conf.json\"",
     "lint:client": "ng lint",
@@ -12,6 +13,10 @@
     "_server:run": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon --delay 5 dist/server/bin/www.js\" ",
     "_server:build": "tsc -p ./server",
     "postinstall": "npm run build"
+  },
+  "author": "rootair",
+  "repository": {
+    "url": "https://github.com/rootair/my-app"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +30,7 @@
     "@angular/platform-browser-dynamic": "",
     "@angular/router": "4.3.2",
     "classlist.js": "^1.1.20150312",
+    "jsonwebtoken": "^7.3.0",
     "core-js": "^2.4.1",
     "devextreme": "^17.1.7",
     "devextreme-angular": "^17.1.7",
