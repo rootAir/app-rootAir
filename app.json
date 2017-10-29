@@ -1,0 +1,7 @@
+{
+	"name": "my-app",
+	"description": "Starter my-app",
+	"repository": "https://github.com/rootair/my-app",
+	"keywords": ["angular2", "express", "node"]
+  }
+  
