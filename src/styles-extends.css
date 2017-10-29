@@ -1,0 +1,735 @@
+/* Estilos adicionais para o projeto (cores, formatação de texto, etc.) */
+.table .valign-top {
+    vertical-align: top!important
+}
+.table .valign-middle {
+    vertical-align: middle!important
+}
+.table .valign-bottom {
+    vertical-align: bottom!important
+}
+.table tr.double-brd>td,
+.table tr.double-brd>th {
+    border-bottom: 2px solid #ddd
+}
+.table tr.triple-brd>td,
+.table tr.triple-brd>th {
+    border-bottom: 3px solid #ddd
+}
+.alert-tag {
+    border-left-width: 6px !important;
+}
+.alert-compact {
+    padding: 4px !important;
+}
+.alert-default {
+    background-color: #fcfcfc;
+    border-color: #ddd !important;
+    color: #666
+}
+.alert-default hr {
+    border-top-color: #e3e3e3 !important;
+}
+.alert-default .alert-link {
+    color: #345084 !important;
+}
+::-ms-clear,
+::-ms-reveal,
+input::-ms-clear,
+input::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0
+}
+textarea.resize {
+    resize: vertical
+}
+textarea.noresize {
+    resize: none
+}
+.btn.disabled,
+.btn[disabled],
+a.btn,
+b.btn,
+button.btn,
+em.btn,
+fieldset[disabled] .btn,
+i.btn,
+input.btn,
+span.btn,
+strong.btn {
+    -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, .5) inset;
+    -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, .5) inset;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, .5) inset
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+    opacity: .4
+}
+.percent-1 {
+    width: 1%!important
+}
+.percent-2 {
+    width: 2%!important
+}
+.percent-3 {
+    width: 3%!important
+}
+.percent-4 {
+    width: 4%!important
+}
+.percent-5 {
+    width: 5%!important
+}
+.percent-6 {
+    width: 6%!important
+}
+.percent-7 {
+    width: 7%!important
+}
+.percent-8 {
+    width: 8%!important
+}
+.percent-9 {
+    width: 9%!important
+}
+.percent-10 {
+    width: 10%!important
+}
+.percent-11 {
+    width: 11%!important
+}
+.percent-12 {
+    width: 12%!important
+}
+.percent-13 {
+    width: 13%!important
+}
+.percent-14 {
+    width: 14%!important
+}
+.percent-15 {
+    width: 15%!important
+}
+.percent-16 {
+    width: 16%!important
+}
+.percent-17 {
+    width: 17%!important
+}
+.percent-18 {
+    width: 18%!important
+}
+.percent-19 {
+    width: 19%!important
+}
+.percent-20 {
+    width: 20%!important
+}
+.percent-21 {
+    width: 21%!important
+}
+.percent-22 {
+    width: 22%!important
+}
+.percent-23 {
+    width: 23%!important
+}
+.percent-24 {
+    width: 24%!important
+}
+.percent-25 {
+    width: 25%!important
+}
+.percent-26 {
+    width: 26%!important
+}
+.percent-27 {
+    width: 27%!important
+}
+.percent-28 {
+    width: 28%!important
+}
+.percent-29 {
+    width: 29%!important
+}
+.percent-30 {
+    width: 30%!important
+}
+.percent-31 {
+    width: 31%!important
+}
+.percent-32 {
+    width: 32%!important
+}
+.percent-33 {
+    width: 33%!important
+}
+.percent-34 {
+    width: 34%!important
+}
+.percent-35 {
+    width: 35%!important
+}
+.percent-36 {
+    width: 36%!important
+}
+.percent-37 {
+    width: 37%!important
+}
+.percent-38 {
+    width: 38%!important
+}
+.percent-39 {
+    width: 39%!important
+}
+.percent-40 {
+    width: 40%!important
+}
+.percent-41 {
+    width: 41%!important
+}
+.percent-42 {
+    width: 42%!important
+}
+.percent-43 {
+    width: 43%!important
+}
+.percent-44 {
+    width: 44%!important
+}
+.percent-45 {
+    width: 45%!important
+}
+.percent-46 {
+    width: 46%!important
+}
+.percent-47 {
+    width: 47%!important
+}
+.percent-48 {
+    width: 48%!important
+}
+.percent-49 {
+    width: 49%!important
+}
+.percent-50 {
+    width: 50%!important
+}
+.percent-51 {
+    width: 51%!important
+}
+.percent-52 {
+    width: 52%!important
+}
+.percent-53 {
+    width: 53%!important
+}
+.percent-54 {
+    width: 54%!important
+}
+.percent-55 {
+    width: 55%!important
+}
+.percent-56 {
+    width: 56%!important
+}
+.percent-57 {
+    width: 57%!important
+}
+.percent-58 {
+    width: 58%!important
+}
+.percent-59 {
+    width: 59%!important
+}
+.percent-60 {
+    width: 60%!important
+}
+.percent-61 {
+    width: 61%!important
+}
+.percent-62 {
+    width: 62%!important
+}
+.percent-63 {
+    width: 63%!important
+}
+.percent-64 {
+    width: 64%!important
+}
+.percent-65 {
+    width: 65%!important
+}
+.percent-66 {
+    width: 66%!important
+}
+.percent-67 {
+    width: 67%!important
+}
+.percent-68 {
+    width: 68%!important
+}
+.percent-69 {
+    width: 69%!important
+}
+.percent-70 {
+    width: 70%!important
+}
+.percent-71 {
+    width: 71%!important
+}
+.percent-72 {
+    width: 72%!important
+}
+.percent-73 {
+    width: 73%!important
+}
+.percent-74 {
+    width: 74%!important
+}
+.percent-75 {
+    width: 75%!important
+}
+.percent-76 {
+    width: 76%!important
+}
+.percent-77 {
+    width: 77%!important
+}
+.percent-78 {
+    width: 78%!important
+}
+.percent-79 {
+    width: 79%!important
+}
+.percent-80 {
+    width: 80%!important
+}
+.percent-81 {
+    width: 81%!important
+}
+.percent-82 {
+    width: 82%!important
+}
+.percent-83 {
+    width: 83%!important
+}
+.percent-84 {
+    width: 84%!important
+}
+.percent-85 {
+    width: 85%!important
+}
+.percent-86 {
+    width: 86%!important
+}
+.percent-87 {
+    width: 87%!important
+}
+.percent-88 {
+    width: 88%!important
+}
+.percent-89 {
+    width: 89%!important
+}
+.percent-90 {
+    width: 90%!important
+}
+.percent-91 {
+    width: 91%!important
+}
+.percent-92 {
+    width: 92%!important
+}
+.percent-93 {
+    width: 93%!important
+}
+.percent-94 {
+    width: 94%!important
+}
+.percent-95 {
+    width: 95%!important
+}
+.percent-96 {
+    width: 96%!important
+}
+.percent-97 {
+    width: 97%!important
+}
+.percent-98 {
+    width: 98%!important
+}
+.percent-99 {
+    width: 99%!important
+}
+.percent-100 {
+    width: 100%!important
+}
+.size-10 {
+    font-size: 10%!important
+}
+.size-20 {
+    font-size: 20%!important
+}
+.size-30 {
+    font-size: 30%!important
+}
+.size-40 {
+    font-size: 40%!important
+}
+.size-50 {
+    font-size: 50%!important
+}
+.size-60 {
+    font-size: 60%!important
+}
+.size-70 {
+    font-size: 70%!important
+}
+.size-80 {
+    font-size: 80%!important
+}
+.size-90 {
+    font-size: 90%!important
+}
+.size-100 {
+    font-size: 100%!important
+}
+.size-110 {
+    font-size: 110%!important
+}
+.size-120 {
+    font-size: 120%!important
+}
+.size-130 {
+    font-size: 130%!important
+}
+.size-140 {
+    font-size: 140%!important
+}
+.size-150 {
+    font-size: 150%!important
+}
+.size-160 {
+    font-size: 160%!important
+}
+.size-170 {
+    font-size: 170%!important
+}
+.size-180 {
+    font-size: 180%!important
+}
+.size-190 {
+    font-size: 190%!important
+}
+.size-200 {
+    font-size: 200%!important
+}
+.size-210 {
+    font-size: 210%!important
+}
+.size-220 {
+    font-size: 220%!important
+}
+.size-230 {
+    font-size: 230%!important
+}
+.size-240 {
+    font-size: 240%!important
+}
+.size-250 {
+    font-size: 250%!important
+}
+.size-260 {
+    font-size: 260%!important
+}
+.size-270 {
+    font-size: 270%!important
+}
+.size-280 {
+    font-size: 280%!important
+}
+.size-290 {
+    font-size: 290%!important
+}
+.size-300 {
+    font-size: 300%!important
+}
+.size-310 {
+    font-size: 310%!important
+}
+.size-320 {
+    font-size: 320%!important
+}
+.size-330 {
+    font-size: 330%!important
+}
+.size-340 {
+    font-size: 340%!important
+}
+.size-350 {
+    font-size: 350%!important
+}
+.size-360 {
+    font-size: 360%!important
+}
+.size-370 {
+    font-size: 370%!important
+}
+.size-380 {
+    font-size: 380%!important
+}
+.size-390 {
+    font-size: 390%!important
+}
+.size-400 {
+    font-size: 400%!important
+}
+.size-410 {
+    font-size: 410%!important
+}
+.size-420 {
+    font-size: 420%!important
+}
+.size-430 {
+    font-size: 430%!important
+}
+.size-440 {
+    font-size: 440%!important
+}
+.size-450 {
+    font-size: 450%!important
+}
+.size-460 {
+    font-size: 460%!important
+}
+.size-470 {
+    font-size: 470%!important
+}
+.size-480 {
+    font-size: 480%!important
+}
+.size-490 {
+    font-size: 490%!important
+}
+.size-500 {
+    font-size: 500%!important
+}
+.text-pre {
+    white-space: pre!important
+}
+.text-wrap {
+    white-space: normal!important
+}
+.text-nowrap {
+    white-space: nowrap!important
+}
+.text-lower,
+.text-lowercase {
+    text-transform: lowercase!important
+}
+.text-upper,
+.text-uppercase {
+    text-transform: uppercase!important
+}
+.text-capitalize {
+    text-transform: capitalize!important
+}
+.text-bold {
+    font-weight: 700!important
+}
+.text-no-bold,
+.text-normal {
+    font-weight: 400!important
+}
+.text-italic {
+    font-style: italic!important
+}
+.text-normal {
+    font-style: normal!important
+}
+.text-no-shadow {
+    text-shadow: none!important
+}
+.text-deleted {
+    text-decoration: line-through!important
+}
+.text-underline {
+    text-decoration: underline!important
+}
+.text-no-underline {
+    text-decoration: none!important
+}
+.text-link {
+    text-decoration: underline!important;
+    cursor: pointer!important
+}
+.text-code {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace
+}
+.text-overflow {
+    text-overflow: ellipsis!important
+}
+.text-left {
+    text-align: left!important
+}
+.text-right {
+    text-align: right!important
+}
+.text-center {
+    text-align: center!important
+}
+.text-justify {
+    text-align: justify!important
+}
+.text-xs-left {
+    text-align: left!important
+}
+.text-xs-right {
+    text-align: right!important
+}
+.text-xs-center {
+    text-align: center!important
+}
+.text-lg-center,
+.text-lg-left,
+.text-lg-right,
+.text-md-center,
+.text-md-left,
+.text-md-right,
+.text-sm-center,
+.text-sm-left,
+.text-sm-right {
+    text-align: left!important
+}
+@media (min-width: 768px) {
+    .text-sm-left {
+        text-align: left!important
+    }
+    .text-sm-right {
+        text-align: right!important
+    }
+    .text-sm-center {
+        text-align: center!important
+    }
+}
+@media (min-width: 992px) {
+    .text-md-left {
+        text-align: left!important
+    }
+    .text-md-right {
+        text-align: right!important
+    }
+    .text-md-center {
+        text-align: center!important
+    }
+}
+@media (min-width: 1200px) {
+    .text-lg-left {
+        text-align: left!important
+    }
+    .text-lg-right {
+        text-align: right!important
+    }
+    .text-lg-center {
+        text-align: center!important
+    }
+}
+.cursor-wait {
+    cursor: wait!important
+}
+.cursor-help {
+    cursor: help!important
+}
+.cursor-cell {
+    cursor: cell!important
+}
+.cursor-grab {
+    cursor: grab!important
+}
+.cursor-move {
+    cursor: move!important
+}
+.cursor-none {
+    cursor: none!important
+}
+.cursor-text {
+    cursor: text!important
+}
+.cursor-default {
+    cursor: default!important
+}
+.cursor-pointer {
+    cursor: pointer!important
+}
+.cursor-zoom-in {
+    cursor: zoom-in!important
+}
+.cursor-zoom-out {
+    cursor: zoom-out!important
+}
+.cursor-crosshair {
+    cursor: crosshair!important
+}
+.cursor-col-resize {
+    cursor: col-resize!important
+}
+.cursor-not-allowed {
+    cursor: not-allowed!important
+}
+.inline-block {
+    display: inline-block!important
+}
+.inline {
+    display: inline!important
+}
+.block {
+    display: block!important
+}
+.hide {
+    display: none
+}
+.center-block,
+.clear-float,
+.show {
+    display: block
+}
+.center-block {
+    margin-left: auto;
+    margin-right: auto
+}
+.box-center {
+    margin: 0 auto
+}
+.float-right {
+    float: right!important
+}
+.float-left {
+    float: left!important
+}
+.clear {
+    clear: both!important
+}
+.position-relative {
+    position: relative!important
+}
+.position-absolute {
+    position: absolute!important
+}
+.position-fixed {
+    position: fixed!important
+}
+.overflow-visible {
+    overflow: visible!important
+}
+.overflow-scroll {
+    overflow: scroll!important
+}
+.overflow-auto {
+    overflow: auto!important
+}
+.overflow-hidden {
+    overflow: hidden!important
+}

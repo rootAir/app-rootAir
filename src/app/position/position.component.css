@@ -9,6 +9,7 @@
     font-size: 20px;
     margin: 50px;
     color: #000000;
+    font-weight: 'bold';
 }
 /deep/ .options,
 /deep/ .selected-data {

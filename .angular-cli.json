@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.less",
+        "../node_modules/font-awesome/css/font-awesome.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -54,10 +55,11 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "less",
     "class": {
       "spec": false
     },
     "component": {}
   }
 }
+

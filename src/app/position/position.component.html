@@ -7,10 +7,12 @@
         [animationDuration]="300"
         [selectedItems]="[positions[0]]">
         <div *dxTemplate="let position of 'title'">
-            <h1 class="accordion-position-active" [style.background-color] = position.colorActive> 
-                {{position.percentActive}}
+            <div class="box-identificacao">
+                <div class="box-title" [style.background-color] = position.colorActive >
+                    {{position.percentActive}}
+                </div>
                 {{position.nameActive}}
-            </h1>
+            </div>
         </div>
         <!-- <div *dxTemplate="let company of 'item'">
             <div>

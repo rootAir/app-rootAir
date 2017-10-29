@@ -1,0 +1,150 @@
+/* Importamos as classes de cores */
+@import '../../colors.less';
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* "Identifique o cliente" */
+div.box-identificacao {
+  // display: block;
+  // position: relative;
+  overflow: hidden;
+  // border: 1px solid rgb(136, 0, 0);
+  // border-radius: 4px;
+  // box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  // margin-bottom: 20px;
+  // background-color: #fff;
+  border-radius: 30px;
+  text-align: center;
+  // width: 45%;
+  // padding: 5px;
+}
+
+/* Coluna da esquerda (.box-title) e coluna da direita (formulário) */
+div.box-identificacao .box-title,
+div.box-identificacao form {
+  // float: none;
+  // width: 100%;
+  // height: auto;
+  padding: 15px;
+}
+
+div.box-identificacao .box-title {
+    position: relative;
+    // display: block;
+    // width: 100%;
+    // background-color: lighten(@color-gray-100, 1%);
+}
+
+/* Resoluções SM, MD, LG - < 768px */
+@media (max-width: 767px) {
+
+  div.box-identificacao .box-title {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 15px;
+  }
+  div.box-identificacao .box-title::after {
+    display: none;
+  }
+}
+
+/* Resoluções SM, MD, LG - >= 768px */
+@media (min-width: 768px) {
+
+  div.box-identificacao .box-title,
+  div.box-identificacao form {
+    // height: 95px;
+  }
+  div.box-identificacao .box-title
+  {
+    line-height: 65px;
+  }
+
+  div.box-identificacao .box-title {
+    float: left;
+    width: 35%;
+    // border-right: 50px solid #fff;
+    // text-align: center;
+    // padding-left: 50px;
+    // border-left: 35px solid lighten(@color-gray-100, 1%);
+  }
+
+  /* Seta */
+  div.box-identificacao .box-title::before,
+  div.box-identificacao .box-title::after {
+    position: absolute;
+    top: 0;
+    right: -35px;
+    // display: block;
+    content: '';
+    // width: 0; 
+    // height: 0; 
+    border-top: 48px solid transparent;
+    border-bottom: 48px solid transparent;
+    border-left: 35px solid lighten(@color-gray-100, -35%);
+    font-size: 35px;
+  }
+  div.box-identificacao .box-title::before {
+    // right: -36px;
+    // border-left-color: #ddd;
+  }
+
+  div.box-identificacao form {
+    // float: left;
+    // width: 55%;
+  }
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* Item lateral de abertura do accordion */
+.dx-accordion-item-title {
+  font-size: 30px;
+}
+
+.dx-accordion-item-title:before {
+  line-height: 35px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* Largura dos botões do formulário de cliente identificado */
+.btn-actions {
+  display: inline-block;
+  width: 100px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* Tabela dos dados complementares */
+.dados-complementares {
+  font-size: 1.3em;
+  padding: 10px 15px;
+  margin-top: 1.3em;
+}
+
+.dados-complementares table tbody > tr > td {
+  padding: 10px 10px 10px 0;
+}
+.dados-complementares table tbody > tr > td.last-icon {
+  padding-right: 0;
+}
+
+/* Ícones dos dados complementares */
+.dados-complementares table tbody > tr > td.icon i.fa {
+  display: inline-block;
+  font-size: 1.7em;
+  width: 1.15em;
+  text-align: center;
+}
+.dados-complementares table tbody > tr > td.last-icon i.fa {
+  width: 0.8em;
+}

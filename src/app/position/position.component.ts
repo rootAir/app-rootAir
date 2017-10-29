@@ -13,7 +13,8 @@ import { Position, Service } from './position.service';
 @Component({
     selector: 'app-position',
     templateUrl: './position.component.html',
-    styleUrls: ['./position.component.css'],
+    // styleUrls: ['./position.component.css', './position.component.less'],
+    styleUrls: ['./position.component.less'],
     providers: [Service]
 })
 export class PositionComponent implements OnInit { 

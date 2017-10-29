@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <router-outlet></router-outlet>  
-    <app-menu></app-menu>
-  `,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit { 
   title = 'app';
