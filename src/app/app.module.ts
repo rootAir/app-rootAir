@@ -12,6 +12,7 @@ import { DxButtonModule,
   DxDataGridModule
   } from 'devextreme-angular';
 // import { PositionModule } from './position/position.module';
+import { environment } from '../environments/environment';
 
 import { APP_BASE_HREF } from '@angular/common';
 import { appRouting } from './app.routes';
@@ -21,7 +22,9 @@ import { PositionComponent } from './position/position.component';
 import { MenuComponent } from './menu/menu.component';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BaseHttpService } from './shared/service/base-http.service';
 
+BaseHttpService.environment = environment;
 
 @NgModule({
   declarations: [
@@ -37,7 +40,6 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     CommonModule,
 
-    // HttpClientModule,
 		DxButtonModule,
 		DxAccordionModule,
 		DxCheckBoxModule,
@@ -48,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     DxTemplateModule
   ],
   providers: [
+    BaseHttpService,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
   bootstrap: [AppComponent],

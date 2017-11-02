@@ -9,6 +9,7 @@ import { LoginService } from './service/login.service';
 // import { ErroUsuarioModel } from './../carrinho/shared/model/erro-usuario.model';
 import { environment } from './../../environments/environment';
 import { LoginStorageModel } from './model/login-storage.model';
+import { LoginLoadModel } from './model/login-load.model';
 
 
 // import {
@@ -27,13 +28,13 @@ import { LoginStorageModel } from './model/login-storage.model';
 
 export class LoginComponent implements OnInit {
 
-    public dadosEntrada: LoginStorageModel = new LoginStorageModel();
+    public dataIn: LoginLoadModel = new LoginLoadModel();
     // public errosLogin: ErroUsuarioModel = new ErroUsuarioModel();
 
     /**
      * URL padrão para qual o usuário será redirecionado após o login
      */
-    public destinoAposLogin: string;
+    public destinoAposLogin: string = 'position';
 
     constructor(
         // private storage: StorageIntegracaoService,
@@ -91,8 +92,7 @@ export class LoginComponent implements OnInit {
      */
     public efetuarLogin() {
         // debugger;
-        this.login.autenticar(this.dadosEntrada).then((autenticado: LoginStorageModel) => {
-            // (<FinanceDefaultOptionsService>this.defaultOptions).atualizarWebVendasContexto();
+        this.login.autenticar(this.dataIn).then((autenticado: LoginStorageModel) => {
             this.router.navigate([this.destinoAposLogin]);
         }).catch((err) => {
             // this.errosLogin = err;

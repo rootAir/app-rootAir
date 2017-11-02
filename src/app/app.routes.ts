@@ -5,11 +5,11 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: 'test',
+    path: 'position',
     component: PositionComponent,
   },
   {
-    path: 'login',
+    path: '',
     loadChildren: './login/login.module#LoginModule'
   }
     // path: '',

@@ -1,51 +1,62 @@
 import { Injectable } from '@angular/core';
 import { Validator } from 'validator.ts/Validator';
-import { environment } from './../../../environments/environment.prod';
-import { LoginStorageModel } from '../model/login-storage.model';
-// import { HttpClient } from '@angular/common/http';
 import { Response, Http, RequestOptions, Headers, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
+// model 
+import { LoginStorageModel } from '../model/login-storage.model';
+import { LoginLoadModel } from '../model/login-load.model';
+
+// services
+import { BaseHttpService } from '../../shared/service/http';
+import { BaseService } from '../../shared/service/base.service';
+
 
 @Injectable()
-export class LoginService {
+export class LoginService extends BaseService<LoginStorageModel, LoginStorageModel> {
 
-    public constructor(public http: Http) {
+    protected path = 'api-token-auth/';
+
+    public constructor(http: BaseHttpService) {
+        super(http);
     }
 
-    public autenticar(dadosEntrada: LoginStorageModel): Promise<LoginStorageModel> {
-        const path = 'http://rta-finance.herokuapp.com/api-token-auth/';
-        const body = {username: 'admin', password: 'wingroot'};
-        
+    public autenticar(dataIn: LoginLoadModel): Promise<LoginStorageModel> {
         debugger;
-        return this.http.post(path, body)
+        const path: string = this.http.createPath(this.path);
+        
+        return this.http.post(path, dataIn)
             .toPromise()
             .then((response: Response) => {
-                let dadosSaida = null;
+                let dataOut = null;
                 try {
-                    dadosSaida = response.json();
+                    dataOut = response.json() as LoginStorageModel;
                 } catch (e) {
                     // throw this.tratarErro('O servidor se comportou de forma inesperada');
                 }
-                return this.tratarSaida(dadosSaida)
+                return this.cureOut(dataOut)
             }).catch((error: any) => {
-                debugger;
+                // debugger;
                 const erroTratado = error;
                 return Promise.reject(erroTratado);
             });
     }
 
-    public tratarSaida(login: any): Promise<LoginStorageModel> {
-        debugger;
-        (<any> sessionStorage).sessoesCatalogo = JSON.stringify({
+    public cureOut(dataOut: LoginStorageModel): Promise<LoginStorageModel> {
+        // debugger;
+        const outCure: LoginStorageModel = new LoginStorageModel();
+        (<any> sessionStorage).session = JSON.stringify({
             usr: {
                 dataAtualizacao: new Date().getTime(),
                 identificacaoSessao: {
-                    token: login.token
+                    token: dataOut.token
                 }
             }
         });
         // this.storage.write(ModuloEnum.LOGIN, login);
-        return Promise.resolve(login);
+        outCure.ip = '';
+        outCure.username = dataOut.username;
+
+        return Promise.resolve(outCure);
     }
 }
