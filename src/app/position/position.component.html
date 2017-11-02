@@ -1,11 +1,11 @@
 <div id="accordion">
     <dx-accordion
         #accordion
-        [dataSource]="positions"
+        [dataSource]="positionLoad"
         [collapsible]="false"
         [multiple]="false"
         [animationDuration]="300"
-        [selectedItems]="[positions[0]]">
+        [selectedItems]="[positionLoad[0]]">
 
         <div *dxTemplate="let position of 'title'">
             <div class="box-identificacao">

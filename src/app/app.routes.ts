@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: 'test',
     component: PositionComponent,
-
+  },
+  {
+    path: 'login',
+    loadChildren: './login/login.module#LoginModule'
+  }
     // path: '',
     // component: AppComponent,
     // children: [{
@@ -21,7 +25,7 @@ const routes: Routes = [
     //   path: '',
     //   redirectTo: 'dashboard',
     //   pathMatch: 'full',
-  }
+  // }
 ];
 
 const config: ExtraOptions = {

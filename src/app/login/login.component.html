@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title blue-gray-700 text-bold text-center size-130">
+                    <i class="fa fa-lock" aria-hidden="true"></i> Login
+                </h3>
+            </div>
+            <form #formLogin="ngForm" id="formulario-login" autocomplete="off" (submit)="efetuarLogin()">
+                <div class="panel-body">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+
+                        <!-- Login -->
+                        <div class="col-sm-12 form-group">
+                            <label class="size-80 hidden-xs">
+                                Usuario
+                            </label>
+                            <input type="text" name="usuario" class="form-control" title="usuario" maxlength="50" [(ngModel)]="dadosEntrada.username" required>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <!-- Senha -->
+                        <div class="col-sm-12 form-group">
+                            <label class="size-80">
+                                Senha
+                            </label>
+                            <input type="password" name="senha" class="form-control" title="Senha" maxlength="50" #inputSenha [(ngModel)]="dadosEntrada.password" required>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Erros gerais -->
+                        <!-- <wv-exibir-erros [erros]="errosLogin" btn-close="true"></wv-exibir-erros> -->
+                        <!-- /Erros gerais -->
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <button type="submit" form="formulario-login" class="btn btn-primary btn-sm">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Acessar
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

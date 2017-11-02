@@ -1,11 +1,14 @@
  import { Component, OnInit } from '@angular/core';
-// import { BrowserModule } from '@angular/platform-browser';
-// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-// import { DxAccordionModule, DxCheckBoxModule, DxSliderModule, DxTagBoxModule, DxTemplateModule } from 'devextreme-angular';
+// model 
+import { PositionLoadModel } from './model/position-load.model';
 
-import { Position, PositionService } from './service/position.service';
+ // service
+import { PositionLoadService } from './service/position-load.service';
 import { DetailsPositionService } from './service/details-position.service';
+import { PositionOutModel } from './model/position-out.model';
+
+
 
 // if(!/localhost/.test(document.location.host)) {
 //     enableProdMode();
@@ -16,24 +19,32 @@ import { DetailsPositionService } from './service/details-position.service';
     templateUrl: './position.component.html',
     // styleUrls: ['./position.component.css'],
     styleUrls: ['./position.component.less'],
-    providers: [PositionService, DetailsPositionService]
+    providers: [PositionLoadService, DetailsPositionService]
 })
 export class PositionComponent implements OnInit { 
     title = 'Position';
-    positions: Position[];
+    // public positionLoad: PositionLoadModel = new PositionLoadModel();
+    public positionLoad: Array<PositionOutModel> = new Array<PositionOutModel>();
     nameActive: string;
     percentActive: string;
     colorActive: string;
     detailsPosition: any;
 
-    ngOnInit(): void {  
+    constructor(
+        private positionLoadService: PositionLoadService,
+        private detailsPositionService: DetailsPositionService) 
+    {
+
     }
 
-    constructor(
-        private positionService: PositionService,
-        private detailsPositionService: DetailsPositionService
-    ) {
-        this.positions = this.positionService.getPositions();
+    public ngOnInit(): void {
+        // this.positionLoadService.getPositionsMock().then((dataOut: PositionLoadModel) => {
+        //     this.positionLoad = dataOut;
+        // }).catch((e) => {
+        //     // this.erros = e;
+        //     throw new Error('dados nao carregados.');
+        // });
+        this.positionLoad = this.positionLoadService.getPositionsMock();
         this.detailsPosition = {
             store: {
                 type: 'array',

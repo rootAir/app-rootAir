@@ -20,6 +20,7 @@ import { appRouting } from './app.routes';
 import { PositionComponent } from './position/position.component';
 import { MenuComponent } from './menu/menu.component';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { AppComponent } from './app.component';
     ReactiveFormsModule,
     CommonModule,
 
+    // HttpClientModule,
 		DxButtonModule,
 		DxAccordionModule,
 		DxCheckBoxModule,

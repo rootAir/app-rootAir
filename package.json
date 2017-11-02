@@ -39,6 +39,7 @@
     "devextreme": "^17.1.7",
     "devextreme-angular": "^17.1.7",
     "font-awesome": "4.7.0",
+    "validator.ts": "0.2.2",
     "typescript": "2.3.4",
     "less": "^2.7.3",
     "rxjs": "^5.4.2",
