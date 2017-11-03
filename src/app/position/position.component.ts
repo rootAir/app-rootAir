@@ -1,13 +1,11 @@
  import { Component, OnInit } from '@angular/core';
 
-// model 
-import { PositionLoadModel } from './model/position-load.model';
+// model
+import { PositionModel } from './model/position.model';
 
  // service
 import { PositionLoadService } from './service/position-load.service';
 import { DetailsPositionService } from './service/details-position.service';
-import { PositionOutModel } from './model/position-out.model';
-
 
 
 // if(!/localhost/.test(document.location.host)) {
@@ -23,22 +21,19 @@ import { PositionOutModel } from './model/position-out.model';
 })
 export class PositionComponent implements OnInit { 
     title = 'Position';
-    // public positionLoad: PositionLoadModel = new PositionLoadModel();
-    public positionLoad: Array<PositionOutModel> = new Array<PositionOutModel>();
+    public positionLoad: Array<PositionModel> = new Array<PositionModel>();
+    // public positionLoad: PositionModel = new PositionModel;
     nameActive: string;
     percentActive: string;
     colorActive: string;
     detailsPosition: any;
 
-    constructor(
-        private positionLoadService: PositionLoadService,
-        private detailsPositionService: DetailsPositionService) 
-    {
-
+    constructor(private positionLoadService: PositionLoadService,
+                private detailsPositionService: DetailsPositionService) {
     }
 
     public ngOnInit(): void {
-        // this.positionLoadService.getPositionsMock().then((dataOut: PositionLoadModel) => {
+        // this.positionLoadService.load().then((dataOut: PositionModel) => {
         //     this.positionLoad = dataOut;
         // }).catch((e) => {
         //     // this.erros = e;

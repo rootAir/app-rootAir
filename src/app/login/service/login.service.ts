@@ -22,7 +22,6 @@ export class LoginService extends BaseService<LoginStorageModel, LoginStorageMod
     }
 
     public autenticar(dataIn: LoginLoadModel): Promise<LoginStorageModel> {
-        debugger;
         const path: string = this.http.createPath(this.path);
         
         return this.http.post(path, dataIn)
@@ -36,14 +35,12 @@ export class LoginService extends BaseService<LoginStorageModel, LoginStorageMod
                 }
                 return this.cureOut(dataOut)
             }).catch((error: any) => {
-                // debugger;
                 const erroTratado = error;
                 return Promise.reject(erroTratado);
             });
     }
 
     public cureOut(dataOut: LoginStorageModel): Promise<LoginStorageModel> {
-        // debugger;
         const outCure: LoginStorageModel = new LoginStorageModel();
         (<any> sessionStorage).session = JSON.stringify({
             usr: {

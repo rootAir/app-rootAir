@@ -5,22 +5,12 @@ import { EnvironmentBase } from '../../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
-/**
- * Esta é a classe base de comunicação http para a estrutura modular
- * do projeto WebVendas, o melhor jeito de se trabalhar com ele é
- * criando em seu modulo uma extensão dele, onde serão aplicadas as
- * caracteristicas das requisições http daquele modulo.
- */
 @Injectable()
 export class BaseHttpService extends Http {
 
-    /**
-     * Configurações do projeto relacionadas ao ambiente
-     */
     public static environment: EnvironmentBase = null;
 
     public constructor(_backend: XHRBackend, @Optional() _defaultOptions?: RequestOptions) {
-        //  segue com a instância
         super(_backend, _defaultOptions);
     }
 
@@ -39,13 +29,10 @@ export class BaseHttpService extends Http {
     //             return Promise.reject(erro);
     //         });
     //     };
-
     //     return observable;
     // }
 
     /**
-     * Retorna o caminho completo para o consumo dos dados
-     *
      * @param {path}
      * Nome do rest a ser consumido
      */

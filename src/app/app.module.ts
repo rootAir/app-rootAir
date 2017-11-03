@@ -23,6 +23,8 @@ import { MenuComponent } from './menu/menu.component';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BaseHttpService } from './shared/service/base-http.service';
+import { EngineService } from './shared/service/engine.service';
+import { requestOptionsProvider } from './shared/default-options.service';
 
 BaseHttpService.environment = environment;
 
@@ -50,6 +52,7 @@ BaseHttpService.environment = environment;
     DxTemplateModule
   ],
   providers: [
+    requestOptionsProvider,
     BaseHttpService,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],

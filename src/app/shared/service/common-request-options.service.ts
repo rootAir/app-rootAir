@@ -9,5 +9,6 @@ export class CommonRequestOptionsService extends BaseRequestOptions {
         
         this.headers.set('Content-Type', 'application/json');
         this.headers.set('Accept', 'application/json');
+        this.headers.set('Access-Control-Allow-Origin', '*');
     }
 }

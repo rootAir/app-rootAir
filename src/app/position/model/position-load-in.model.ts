@@ -1,4 +1,4 @@
-export class PositionOutModel {
+export class PositionLoadInModel {
     ID: number;
     nameActive: string;
     percentActive: string;

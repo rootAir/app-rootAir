@@ -1,15 +1,61 @@
+import { DefaultOptionsService } from './../../shared/default-options.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
-// import { BaseService } from '../../shared/service/base.service';
-// import { Validator } from 'validator.ts/Validator';
+import { Response, RequestOptions } from '@angular/http';
+import { Validator } from 'validator.ts/Validator';
 
 // model
-import { PositionOutModel } from '../model/position-out.model';
-import { PositionLoadModel } from '../model/position-load.model';
+import { PositionLoadOutModel } from '../model/position-load-out.model';
+import { PositionLoadInModel } from '../model/position-load-in.model';
+import { PositionModel } from '../model/position.model';
+
+// service
+import { LoadService } from '../../shared/service/load.service';
+import { BaseService } from '../../shared/service/base.service';
+import { BaseHttpService } from '../../shared/service/http';
 
 
-let positions: PositionOutModel[] = [{
+@Injectable()
+export class PositionLoadService extends LoadService<PositionLoadInModel, PositionLoadOutModel> {
+
+    protected path = 'api/provider';
+
+    public constructor(http: BaseHttpService) {
+        super(http);
+    }
+
+    public load(): Promise<PositionModel> {
+        const path: string = this.http.createPath(this.path);
+  
+        return this.http.get(path)
+            .toPromise()
+            .then((response: Response) => {
+                let dataOut = null;
+                try {
+                    dataOut = response.json() as PositionLoadOutModel;
+                } catch (e) {
+                    throw new Error('O servidor se comportou de forma inesperada');
+                }
+                try {
+                    (new Validator()).validate(dataOut);
+                } catch (e) {
+                    // throw this.cureErro({validator: e, response: response});
+                }
+
+                return this.cureOut(dataOut);
+            })//.catch((error: any) => Promise.reject(this.cureErro(error)));
+    }
+
+    public cureOut(dataOut: PositionLoadOutModel): PositionModel {
+        return dataOut;
+    }
+
+    public getPositionsMock(): PositionLoadOutModel[] {
+        return positions;
+    }
+}
+
+let positions: PositionLoadOutModel[] = [{
     "ID": 1,
     "nameActive": "Fun",
     "percentActive": "60%",
@@ -30,48 +76,3 @@ let positions: PositionOutModel[] = [{
     "percentActive": "5%",
     "colorActive": "#d3bbf5",
 }];
-
-
-@Injectable()
-export class PositionLoadService { //extends BaseService<any, any> {
-
-    protected path = 'api/position';
-
-    public constructor(
-        // private http: HttpClient,
-        // private storage: StorageIntegracaoService
-    ) {
-        // super(http);
-    }
-
-    public getPositionsMock(): PositionOutModel[] {
-        return positions;
-    }
-
-    // public getPositions(): Promise<PositionLoadModel> {
-
-    //     return this.http.get(this.path)
-    //         .toPromise()
-    //         .then((response: Response) => {
-    //             let dataOut = null;
-    //             try {
-    //                 dataOut = response.json() as PositionOutModel;
-    //             } catch (e) {
-    //                 throw new Error('O servidor se comportou de forma inesperada');
-    //             }
-    //             // try {
-    //             //     (new Validator()).validate(dataOut);
-    //             // } catch (e) {
-    //             //     // throw this.cureErro({validator: e, response: response});
-    //             // }
-
-    //             return this.cureOut(dataOut);
-    //         })//.catch((error: any) => Promise.reject(this.cureErro(error)));
-    // }
-
-    public cureOut(dataOut: PositionOutModel): PositionOutModel {
-        return dataOut;
-    }
-
-}
-
