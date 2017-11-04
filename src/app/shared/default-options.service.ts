@@ -11,8 +11,11 @@ export class DefaultOptionsService extends CommonRequestOptionsService {
 	) {
         super();
 
-        const session = JSON.parse(sessionStorage.session).usr.identificacaoSessao;
-		this.headers.set('Authorization', 'JWT ' + session.token);
+        let session: string;
+        if ( sessionStorage.session !== undefined ) {
+            session = JSON.parse(sessionStorage.session).usr.identificacaoSessao.token;
+            this.headers.set('Authorization', 'JWT ' + session);
+        }
 	}
 }
 

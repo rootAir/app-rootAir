@@ -13,6 +13,7 @@ import { PositionModel } from '../model/position.model';
 import { LoadService } from '../../shared/service/load.service';
 import { BaseService } from '../../shared/service/base.service';
 import { BaseHttpService } from '../../shared/service/http';
+import { GroupByPipe } from '../../shared/pipe/group-pipe';
 
 
 @Injectable()
@@ -24,7 +25,7 @@ export class PositionLoadService extends LoadService<PositionLoadInModel, Positi
         super(http);
     }
 
-    public load(): Promise<PositionModel> {
+    public load(): Promise<Array<PositionModel>> {
         const path: string = this.http.createPath(this.path);
   
         return this.http.get(path)
@@ -46,33 +47,27 @@ export class PositionLoadService extends LoadService<PositionLoadInModel, Positi
             })//.catch((error: any) => Promise.reject(this.cureErro(error)));
     }
 
-    public cureOut(dataOut: PositionLoadOutModel): PositionModel {
-        return dataOut;
-    }
+    public cureOut(dataOut: Array<PositionLoadOutModel>): Array<PositionModel> {
+        // debugger;
+        let outCure: Array<PositionModel> = new Array<PositionModel>();
+        outCure = GroupByPipe.prototype.transform(dataOut, 'type_launch');
+        
+        // outCure.forEach((provider) => {
+        //     const outCuring: PositionModel = new PositionModel();
+        //     outCuring.id = provider.id;
+        //     outCuring.type_launch = provider.type_launch;
+        //     outCuring.description = provider.description;
+        //     outCuring.date_last_purchase = provider.date_last_purchase;
+        //     outCuring.total_debit_week = provider.total_debit_week;
+        //     outCuring.total_credit_week = provider.total_credit_week;
+        //     outCuring.total_apportionment = provider.total_apportionment;
+        //     outCuring.synchronized = provider.synchronized;
+        //     outCuring.observation = provider.observation;
+        //     outCuring.reminder = provider.reminder;
+        //     outCuring.author = provider.author;
+        //     outCure.push(outCuring)
+        // });
 
-    public getPositionsMock(): PositionLoadOutModel[] {
-        return positions;
+        return outCure;
     }
 }
-
-let positions: PositionLoadOutModel[] = [{
-    "ID": 1,
-    "nameActive": "Fun",
-    "percentActive": "60%",
-    "colorActive": "#ffa600",
-}, {
-    "ID": 2,
-    "nameActive": "Task",
-    "percentActive": "25%",
-    "colorActive": "#88f1bc",
-}, {
-    "ID": 3,
-    "nameActive": "Study",
-    "percentActive": "10%",
-    "colorActive": "#88e5f1",
-}, {
-    "ID": 4,
-    "nameActive": "Sport",
-    "percentActive": "5%",
-    "colorActive": "#d3bbf5",
-}];

@@ -1,50 +1,44 @@
 <div id="accordion">
-    <dx-accordion
-        #accordion
-        [dataSource]="positionLoad"
-        [collapsible]="false"
-        [multiple]="false"
-        [animationDuration]="300"
-        [selectedItems]="[positionLoad[0]]">
+    <dx-accordion #accordion [dataSource]="positionLoad" [collapsible]="false" [multiple]="false" [animationDuration]="300" [selectedItems]="[position]">
 
         <div *dxTemplate="let position of 'title'">
             <div class="box-identificacao">
-                <div class="box-title" [style.background-color] = position.colorActive >
-                    {{position.percentActive}}
-                </div>
-                {{position.nameActive}}
+                <!-- <div class="box-title" [style.background-color]=position.colorActive>
+                    {{position.key}}
+                </div> -->
+                {{ position.key }}
             </div>
         </div>
-        <div *dxTemplate="let positionItens of 'item'">
+        <div *dxTemplate="let position of 'item'">
 
-            <dx-data-grid id="gridContainer"
-                [dataSource]="detailsPosition"
-                [masterDetail]="{ enabled: true, template: 'detail' }">
-            
-                <dxi-column dataField="Prefix" [width]="70" caption="Title"></dxi-column>
-                <dxi-column dataField="FirstName"></dxi-column>
-                <dxi-column dataField="LastName"></dxi-column>
-                <dxi-column dataField="Position" [width]="170"></dxi-column>
-                <dxi-column dataField="State" [width]="125"></dxi-column>
-                <dxi-column dataField="BirthDate" dataType="date"></dxi-column>
-            
-                <div *dxTemplate="let employee of 'detail'">
-                    <div class="internal-grid-container">
-                        <!-- <div>{{employee.data.FirstName + " " + employee.data.LastName + "'s Tasks:"}}</div> -->
-                        <dx-data-grid class="internal-grid"
-                            [dataSource]="employee.data.Tasks"
-                            [showBorders]="true"
-                            [columnAutoWidth]="true">
-                                <dxi-column dataField="Subject"></dxi-column>
-                                <dxi-column dataField="StartDate" dataType="date"></dxi-column>
-                                <dxi-column dataField="DueDate" dataType="date"></dxi-column>
-                                <dxi-column dataField="Priority"></dxi-column>
-                                <dxi-column  dataType="boolean" caption="Completed" [calculateCellValue]="completedValue"></dxi-column>
-                        </dx-data-grid>
-                    </div>
-                </div>
-            </dx-data-grid>
+            <div>
+                <data-table id="persons-grid" [headerTitle]=position.value[0].description [items]="items" [itemCount]="itemCount" (rowClick)="rowClick($event)" (rowDoubleClick)="rowDoubleClick($event)" [rowTooltip]="rowTooltip">
+                    <data-table-column [property]="'name'" [header]="'Name'" [sortable]="true" [resizable]="true">
+                    </data-table-column>
+                    <data-table-column [property]="'date'" [header]="'Date'" [sortable]="true">
+                        <ng-template #dataTableCell let-item="item">
+                            <span>{{item.date | date:'yyyy-MM-dd'}}</span>
+                        </ng-template>
+                    </data-table-column>
+                    <data-table-column property="phoneNumber" header="Phone number" width="150px">
+                    </data-table-column>
+                    <data-table-column [property]="'jobTitle'" [header]="'Job title'" [visible]="false">
+                    </data-table-column>
+                    <data-table-column [property]="'active'" [header]="'Active'" [width]="100" [resizable]="true">
+                        <ng-template #dataTableHeader let-item="item">
+                            <span style="color: rgb(232, 0, 0)">Active</span>
+                        </ng-template>
+                        <ng-template #dataTableCell let-item="item">
+                            <span style="color: grey">
+                                <span class="fa fa-check" *ngIf="item.active"></span>
+                            <span class="fa fa-times" *ngIf="!item.active"></span>
+                            </span>
+                        </ng-template>
+                    </data-table-column>
+                </data-table>
+            </div>
 
         </div>
+        <!-- </div> -->
     </dx-accordion>
 </div>
